@@ -11,6 +11,8 @@
 		EE686FAF2A25F9CA001E3993 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FAE2A25F9CA001E3993 /* ContentView.swift */; };
 		EE686FB12A25F9CB001E3993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE686FB02A25F9CB001E3993 /* Assets.xcassets */; };
 		EE686FB52A25F9CB001E3993 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE686FB42A25F9CB001E3993 /* Preview Assets.xcassets */; };
+		EE686FBC2A25FB20001E3993 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FBB2A25FB20001E3993 /* DataModel.swift */; };
+		EE686FBE2A25FB2D001E3993 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FBD2A25FB2D001E3993 /* Weekday.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		EE686FB02A25F9CB001E3993 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE686FB22A25F9CB001E3993 /* Snoozee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Snoozee.entitlements; sourceTree = "<group>"; };
 		EE686FB42A25F9CB001E3993 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE686FBB2A25FB20001E3993 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		EE686FBD2A25FB2D001E3993 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */,
 				EE686FAE2A25F9CA001E3993 /* ContentView.swift */,
+				EE686FBB2A25FB20001E3993 /* DataModel.swift */,
+				EE686FBD2A25FB2D001E3993 /* Weekday.swift */,
 				EE686FB02A25F9CB001E3993 /* Assets.xcassets */,
 				EE686FB22A25F9CB001E3993 /* Snoozee.entitlements */,
 				EE686FB32A25F9CB001E3993 /* Preview Content */,
@@ -141,6 +147,8 @@
 			files = (
 				EE686FAF2A25F9CA001E3993 /* ContentView.swift in Sources */,
 				EE686FAD2A25F9CA001E3993 /* SnoozeeApp.swift in Sources */,
+				EE686FBE2A25FB2D001E3993 /* Weekday.swift in Sources */,
+				EE686FBC2A25FB20001E3993 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
