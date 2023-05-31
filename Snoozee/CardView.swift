@@ -9,8 +9,10 @@ import SwiftUI
 
 struct CardView: View {
     
-
     var data: DataModel
+    @State var isOn : Bool = true
+    
+    
     var body: some View {
         
         RoundedRectangle(cornerRadius: 24)
@@ -20,6 +22,12 @@ struct CardView: View {
             .overlay(
                 
                 VStack {
+                    Toggle(isOn: $isOn) {
+                    }
+                    .padding(.bottom)
+
+
+                    
                     HStack {
                         Text("\(String(format: "%02d", data.hour)):\(String(format: "%02d", data.minute))")
                             .font(.system(size: UIFont.textStyleSize(.largeTitle) * 1.47058824, weight: .light))
@@ -47,14 +55,14 @@ struct CardView: View {
                             Spacer()
                         }
                     }
+                    
                     .font(.caption2)
+                    Spacer()
                     
                 }
                     .padding()
                     .foregroundColor(data.isToggleActive ? .white : Color(red:0.459, green: 0.459, blue: 0.459))
             )
-            
-        
     }
 }
 
