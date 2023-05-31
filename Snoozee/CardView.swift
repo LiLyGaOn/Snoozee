@@ -53,13 +53,13 @@ struct CardView: View {
                         }
                         
                         HStack {
-                            Text("다시 알림: ")
+                            Text("다시 알림: \(data.reminder)분 뒤 다시 알림")
                                 .fixedSize()
                             Spacer()
                         }
                         
                         HStack {
-                            Text("사운드: ")
+                            Text("사운드: \(data.soundName)")
                                 .fixedSize()
                             Spacer()
                         }
