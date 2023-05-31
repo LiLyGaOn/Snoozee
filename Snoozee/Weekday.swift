@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Weekday: String {
+enum Weekday: String, Identifiable {
     case mon = "월"
     case tue = "화"
     case wed = "수"
@@ -15,4 +15,8 @@ enum Weekday: String {
     case fri = "금"
     case sat = "토"
     case sun = "일"
+    
+    var id: String {
+       rawValue
+    }
 }
