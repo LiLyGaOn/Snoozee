@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		97D126BF2A27658C008FEB64 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D126BE2A27658C008FEB64 /* CardView.swift */; };
+		97D126C12A2772D5008FEB64 /* textStyleSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D126C02A2772D5008FEB64 /* textStyleSize.swift */; };
 		EE686FAD2A25F9CA001E3993 /* SnoozeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */; };
 		EE686FAF2A25F9CA001E3993 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FAE2A25F9CA001E3993 /* ContentView.swift */; };
 		EE686FB12A25F9CB001E3993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE686FB02A25F9CB001E3993 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		97D126BE2A27658C008FEB64 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		97D126C02A2772D5008FEB64 /* textStyleSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textStyleSize.swift; sourceTree = "<group>"; };
 		EE686FA92A25F9CA001E3993 /* Snoozee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snoozee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnoozeeApp.swift; sourceTree = "<group>"; };
 		EE686FAE2A25F9CA001E3993 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				EE686FAE2A25F9CA001E3993 /* ContentView.swift */,
 				EE686FBB2A25FB20001E3993 /* DataModel.swift */,
 				EE686FBD2A25FB2D001E3993 /* Weekday.swift */,
+				97D126C02A2772D5008FEB64 /* textStyleSize.swift */,
 				EE686FB02A25F9CB001E3993 /* Assets.xcassets */,
 				EE686FB22A25F9CB001E3993 /* Snoozee.entitlements */,
 				EE686FB32A25F9CB001E3993 /* Preview Content */,
@@ -151,6 +154,7 @@
 				EE686FAF2A25F9CA001E3993 /* ContentView.swift in Sources */,
 				EE686FAD2A25F9CA001E3993 /* SnoozeeApp.swift in Sources */,
 				EE686FBE2A25FB2D001E3993 /* Weekday.swift in Sources */,
+				97D126C12A2772D5008FEB64 /* textStyleSize.swift in Sources */,
 				EE686FBC2A25FB20001E3993 /* DataModel.swift in Sources */,
 				97D126BF2A27658C008FEB64 /* CardView.swift in Sources */,
 			);
