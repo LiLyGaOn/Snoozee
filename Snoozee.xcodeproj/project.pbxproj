@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97D126BF2A27658C008FEB64 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D126BE2A27658C008FEB64 /* CardView.swift */; };
 		EE686FAD2A25F9CA001E3993 /* SnoozeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */; };
 		EE686FAF2A25F9CA001E3993 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FAE2A25F9CA001E3993 /* ContentView.swift */; };
 		EE686FB12A25F9CB001E3993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE686FB02A25F9CB001E3993 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97D126BE2A27658C008FEB64 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		EE686FA92A25F9CA001E3993 /* Snoozee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snoozee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnoozeeApp.swift; sourceTree = "<group>"; };
 		EE686FAE2A25F9CA001E3993 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */,
+				97D126BE2A27658C008FEB64 /* CardView.swift */,
 				EE686FAE2A25F9CA001E3993 /* ContentView.swift */,
 				EE686FBB2A25FB20001E3993 /* DataModel.swift */,
 				EE686FBD2A25FB2D001E3993 /* Weekday.swift */,
@@ -149,6 +152,7 @@
 				EE686FAD2A25F9CA001E3993 /* SnoozeeApp.swift in Sources */,
 				EE686FBE2A25FB2D001E3993 /* Weekday.swift in Sources */,
 				EE686FBC2A25FB20001E3993 /* DataModel.swift in Sources */,
+				97D126BF2A27658C008FEB64 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +277,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Snoozee/Preview Content\"";
-				DEVELOPMENT_TEAM = 47N48U5HD5;
+				DEVELOPMENT_TEAM = 2YSYJFB7P9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
