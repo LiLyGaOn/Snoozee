@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     
-    var data: DataModel
+    @State var data: DataModel
     @State var isOn : Bool = true
     
     
@@ -17,6 +17,9 @@ struct CardView: View {
         
         RoundedRectangle(cornerRadius: 24)
             .aspectRatio(0.73, contentMode: .fit)
+            .onAppear {
+                isOn = data.isToggleActive
+            }
             .foregroundColor(data.isToggleActive ? Color(.systemGreen) : Color(.systemGray4))
             .opacity(data.isToggleActive ? 0.3 : 1)
             .overlay(
@@ -24,8 +27,14 @@ struct CardView: View {
                 VStack {
                     Toggle(isOn: $isOn) {
                     }
+                    .onChange(of: isOn) { newValue in
+                                    if newValue {
+                                        data.isToggleActive = true
+                                    } else {
+                                        data.isToggleActive = false
+                                    }
+                                }
                     .padding(.bottom)
-
 
                     
                     HStack {
