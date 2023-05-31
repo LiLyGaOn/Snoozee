@@ -47,7 +47,7 @@ struct CardView: View {
                     
                     Group {
                         HStack {
-                            Text("요일: ")
+                            Text("요일: \(data.returnWeekdays)")
                                 .fixedSize()
                             Spacer()
                         }
