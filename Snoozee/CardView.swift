@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     
-    @State var data: DataModel
+    @State var dataModel: DataModel
     @State var isOn : Bool = true
     
     
@@ -18,10 +18,10 @@ struct CardView: View {
         RoundedRectangle(cornerRadius: 24)
             .aspectRatio(0.73, contentMode: .fit)
             .onAppear {
-                isOn = data.isToggleActive
+                isOn = dataModel.isToggleActive
             }
-            .foregroundColor(data.isToggleActive ? Color(.systemGreen) : Color(.systemGray4))
-            .opacity(data.isToggleActive ? 0.3 : 1)
+            .foregroundColor(dataModel.isToggleActive ? Color(.systemGreen) : Color(.systemGray4))
+            .opacity(dataModel.isToggleActive ? 0.3 : 1)
             .overlay(
                 
                 VStack {
@@ -29,16 +29,16 @@ struct CardView: View {
                     }
                     .onChange(of: isOn) { newValue in
                                     if newValue {
-                                        data.isToggleActive = true
+                                        dataModel.isToggleActive = true
                                     } else {
-                                        data.isToggleActive = false
+                                        dataModel.isToggleActive = false
                                     }
                                 }
                     .padding(.bottom)
 
                     
                     HStack {
-                        Text("\(String(format: "%02d", data.hour)):\(String(format: "%02d", data.minute))")
+                        Text("\(String(format: "%02d", dataModel.hour)):\(String(format: "%02d", dataModel.minute))")
                             .font(.system(size: UIFont.textStyleSize(.largeTitle) * 1.47058824, weight: .light))
                             .fixedSize()
                         Spacer()
@@ -47,7 +47,7 @@ struct CardView: View {
                     
                     Group {
                         HStack {
-                            Text("요일: \(data.returnWeekdays)")
+                            Text("요일: \(dataModel.returnWeekdays)")
                                 .fixedSize()
                             Spacer()
                         }
@@ -70,14 +70,14 @@ struct CardView: View {
                     
                 }
                     .padding()
-                    .foregroundColor(data.isToggleActive ? .white : Color(red:0.459, green: 0.459, blue: 0.459))
+                    .foregroundColor(dataModel.isToggleActive ? .white : Color(red:0.459, green: 0.459, blue: 0.459))
             )
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(data: DataModel.sampleData[1])
+        CardView(dataModel: DataModel.sampleData[1])
             .previewLayout(.fixed(width: 169, height: 230))
     }
 }
