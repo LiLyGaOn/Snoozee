@@ -8,10 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct DataModel {
+struct DataModel : Identifiable{
+    
+    var id: UUID
     var hour: Int
     var minute: Int
-    
     var selectedWeekdays: [Weekday]
     var returnWeekdays: String {
         returnWeekdays(selectedWeekdays: self.selectedWeekdays)
@@ -20,6 +21,17 @@ struct DataModel {
     var reminder: Int
     var soundName: String
     var isToggleActive: Bool
+    
+    
+    init(id: UUID = UUID(), hour: Int, minute: Int, selectedWeekdays: [Weekday], reminder: Int, soundName: String, isToggleActive: Bool) {
+        self.id = id
+        self.hour = hour
+        self.minute = minute
+        self.selectedWeekdays = selectedWeekdays
+        self.reminder = reminder
+        self.soundName = soundName
+        self.isToggleActive = isToggleActive
+    }
 }
 
 extension DataModel {
