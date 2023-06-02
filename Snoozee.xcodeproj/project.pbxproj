@@ -15,6 +15,7 @@
 		EE686FB52A25F9CB001E3993 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE686FB42A25F9CB001E3993 /* Preview Assets.xcassets */; };
 		EE686FBC2A25FB20001E3993 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FBB2A25FB20001E3993 /* DataModel.swift */; };
 		EE686FBE2A25FB2D001E3993 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FBD2A25FB2D001E3993 /* Weekday.swift */; };
+		EEB7809D2A29CC5A009684C3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7809C2A29CC5A009684C3 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EE686FB42A25F9CB001E3993 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EE686FBB2A25FB20001E3993 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		EE686FBD2A25FB2D001E3993 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		EEB7809C2A29CC5A009684C3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */,
 				97D126BE2A27658C008FEB64 /* CardView.swift */,
+				EEB7809C2A29CC5A009684C3 /* MainView.swift */,
 				EE686FAE2A25F9CA001E3993 /* ContentView.swift */,
 				EE686FBB2A25FB20001E3993 /* DataModel.swift */,
 				EE686FBD2A25FB2D001E3993 /* Weekday.swift */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE686FAF2A25F9CA001E3993 /* ContentView.swift in Sources */,
+				EEB7809D2A29CC5A009684C3 /* MainView.swift in Sources */,
 				EE686FAD2A25F9CA001E3993 /* SnoozeeApp.swift in Sources */,
 				EE686FBE2A25FB2D001E3993 /* Weekday.swift in Sources */,
 				97D126C12A2772D5008FEB64 /* textStyleSize.swift in Sources */,
