@@ -46,21 +46,16 @@ struct CardView: View {
                         
                     }
                     
-                    VStack(alignment: .leading) {
-                        HStack {
+                    HStack {
+                        VStack(alignment: .leading) {
                             Text("요일: \(dataModel.returnWeekdays)")
                                 .fixedSize()
-                        }
-                        
-                        HStack {
-                            Text("다시 알림: \(dataModel.reminder)분 뒤 다시 알림")
+                            Text("다시 알림: \(dataModel.reminder)분 뒤")
                                 .fixedSize()
-                        }
-                        
-                        HStack {
                             Text("사운드: \(dataModel.soundName)")
                                 .fixedSize()
                         }
+                        Spacer()
                     }
                     
                     //.font(.caption)
