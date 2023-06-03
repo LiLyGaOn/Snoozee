@@ -18,6 +18,7 @@
 		EE686FBC2A25FB20001E3993 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FBB2A25FB20001E3993 /* DataModel.swift */; };
 		EE686FBE2A25FB2D001E3993 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FBD2A25FB2D001E3993 /* Weekday.swift */; };
 		EEB7809D2A29CC5A009684C3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7809C2A29CC5A009684C3 /* MainView.swift */; };
+		EED360FD2A2B4051008E03E0 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED360FC2A2B4051008E03E0 /* WeekDayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EE686FBB2A25FB20001E3993 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		EE686FBD2A25FB2D001E3993 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		EEB7809C2A29CC5A009684C3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EED360FC2A2B4051008E03E0 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				EE686FBB2A25FB20001E3993 /* DataModel.swift */,
 				9772E8662A2B404400CBBB15 /* ReminderView.swift */,
 				EE686FBD2A25FB2D001E3993 /* Weekday.swift */,
+				EED360FC2A2B4051008E03E0 /* WeekDayView.swift */,
 				97D126C02A2772D5008FEB64 /* textStyleSize.swift */,
 				EE686FB02A25F9CB001E3993 /* Assets.xcassets */,
 				EE686FB22A25F9CB001E3993 /* Snoozee.entitlements */,
@@ -164,6 +167,7 @@
 				EEB7809D2A29CC5A009684C3 /* MainView.swift in Sources */,
 				EE686FAD2A25F9CA001E3993 /* SnoozeeApp.swift in Sources */,
 				EE686FBE2A25FB2D001E3993 /* Weekday.swift in Sources */,
+				EED360FD2A2B4051008E03E0 /* WeekDayView.swift in Sources */,
 				97D126C12A2772D5008FEB64 /* textStyleSize.swift in Sources */,
 				9772E8672A2B404400CBBB15 /* ReminderView.swift in Sources */,
 				9772E8632A2B2B8E00CBBB15 /* SettingView.swift in Sources */,
