@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Weekday: String, Identifiable {
+enum Weekday: String, Identifiable, CaseIterable {
     case mon = "월"
     case tue = "화"
     case wed = "수"
