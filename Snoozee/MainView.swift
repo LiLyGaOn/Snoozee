@@ -11,12 +11,16 @@ struct MainView: View {
     var dataModels: [DataModel]
     @State var gridColumns = Array(repeating: GridItem(.flexible()), count: 2)
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: gridColumns) {
-                ForEach(dataModels) { dataModel in
-                    CardView(dataModel: dataModel)
+        NavigationView{
+            ScrollView {
+                LazyVGrid(columns: gridColumns) {
+                    ForEach(dataModels) { dataModel in
+                        CardView(dataModel: dataModel)
+                    }
                 }
             }
+            .padding(.horizontal)
+            .navigationTitle("스누즈")
         }
     }
 }
