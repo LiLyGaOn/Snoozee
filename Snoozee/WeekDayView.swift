@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReminderView: View {
+struct WeekDayView: View {
     @State var selectedWeekdays: [Weekday] = []
     var body: some View {
         List {
@@ -43,9 +43,9 @@ struct ReminderView: View {
     }
 }
 
-struct ReminderView_Previews: PreviewProvider {
+struct WeekDayView_Previews: PreviewProvider {
     static var previews: some View {
-        ReminderView()
+        WeekDayView()
     }
 }
 
