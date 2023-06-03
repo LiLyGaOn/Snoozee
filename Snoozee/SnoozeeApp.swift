@@ -11,7 +11,7 @@ import SwiftUI
 struct SnoozeeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView(dataModels: DataModel.sampleData)
         }
     }
 }
