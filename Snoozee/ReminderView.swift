@@ -39,6 +39,6 @@ struct ReminderView: View {
 
 struct ReminderView_Previews: PreviewProvider {
     static var previews: some View {
-        WeekDayView()
+        ReminderView()
     }
 }
