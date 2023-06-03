@@ -13,48 +13,54 @@ struct SettingView: View {
     let isEditing: Bool
     
     var body: some View {
-        VStack {
-            DatePicker("Select a time", selection: $selectedTime, displayedComponents: .hourAndMinute)
-                .datePickerStyle(.wheel)
-                .labelsHidden()
-                .fixedSize()
+        NavigationStack {
+            VStack {
+                DatePicker("Select a time", selection: $selectedTime, displayedComponents: .hourAndMinute)
+                    .datePickerStyle(.wheel)
+                    .labelsHidden()
+                    .fixedSize()
                 
-            List{
-                HStack{
-                    Text("요일")
-                    Spacer()
-                    Text("\(dataModel.returnWeekdays)")
-                        .foregroundColor(Color(red:0.459, green: 0.459, blue: 0.459))
-                }
-                
-                HStack{
-                    Text("다시 알림")
-                    Spacer()
-                    Text("\(dataModel.reminder)분 뒤")
-                        .foregroundColor(Color(red:0.459, green: 0.459, blue: 0.459))
-                }
-                
-                HStack{
-                    Text("사운드")
-                    Spacer()
-                    Text("\(dataModel.soundName)")
-                        .foregroundColor(Color(red:0.459, green: 0.459, blue: 0.459))
-                }
-                
-                if isEditing{
-                    Section{
-                        Button(action: {}) {
-                            HStack{
-                                Spacer()
-                                Text("알람 삭제")
-                                    .foregroundColor(.red)
-                                Spacer()
+                List{
+                    NavigationLink(destination: WeekDayView()){
+                        HStack{
+                            Text("요일")
+                            Spacer()
+                            Text("\(dataModel.returnWeekdays)")
+                                .foregroundColor(Color(red:0.459, green: 0.459, blue: 0.459))
+                        }
+                    }
+                    
+                    NavigationLink(destination: ReminderView()){
+                        HStack{
+                            Text("다시 알림")
+                            Spacer()
+                            Text("\(dataModel.reminder)분 뒤")
+                                .foregroundColor(Color(red:0.459, green: 0.459, blue: 0.459))
+                        }
+                    }
+                    
+                    HStack{
+                        Text("사운드")
+                        Spacer()
+                        Text("\(dataModel.soundName)")
+                            .foregroundColor(Color(red:0.459, green: 0.459, blue: 0.459))
+                    }
+                    
+                    if isEditing{
+                        Section{
+                            Button(action: {}) {
+                                HStack{
+                                    Spacer()
+                                    Text("알람 삭제")
+                                        .foregroundColor(.red)
+                                    Spacer()
+                                }
                             }
                         }
                     }
                 }
             }
-        }
+        }.tint(.yellow)
     }
 }
 
