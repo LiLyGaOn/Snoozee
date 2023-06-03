@@ -39,8 +39,9 @@ struct CardView: View {
                     
                     HStack {
                         Text("\(String(format: "%02d", dataModel.hour)):\(String(format: "%02d", dataModel.minute))")
-                            .font(.system(size: UIFont.textStyleSize(.largeTitle) * 1.47058824, weight: .light))
+                            .font(.system(size: UIFont.textStyleSize(.largeTitle) * 1.7, weight: .light))
                             .fixedSize()
+                            .padding(.bottom)
                         Spacer()
                         
                     }
@@ -53,19 +54,20 @@ struct CardView: View {
                         }
                         
                         HStack {
-                            Text("다시 알림: \(data.reminder)분 뒤 다시 알림")
+                            Text("다시 알림: \(dataModel.reminder)분 뒤 다시 알림")
                                 .fixedSize()
                             Spacer()
                         }
                         
                         HStack {
-                            Text("사운드: \(data.soundName)")
+                            Text("사운드: \(dataModel.soundName)")
                                 .fixedSize()
                             Spacer()
                         }
                     }
                     
-                    .font(.caption2)
+                    //.font(.caption)
+                    .font(.system(size: UIFont.textStyleSize(.caption2) * 1.2, weight: .light))
                     Spacer()
                     
                 }
