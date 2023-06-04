@@ -30,7 +30,7 @@ struct MainView: View {
                                     .foregroundColor(Color(.systemGray4))
                                     .overlay (
                                         Image(systemName: "plus")
-                                            .font(.system(size: 24))
+                                            .font(.largeTitle)
                                             .foregroundColor(Color(.systemOrange))
                                     )}} else {
                                         
@@ -50,7 +50,7 @@ struct MainView: View {
             .navigationTitle("스누즈")
             .sheet(isPresented: $isShowingSheet) {
                 NavigationView{
-                    SettingView(dataModel: parameterData, isEditing: parameterIsEditing)
+                    SettingView(dataModel: parameterData, isEditing: parameterIsEditing) 
                         .toolbar {
                             ToolbarItem(placement: .cancellationAction){
                                 Button("취소"){
