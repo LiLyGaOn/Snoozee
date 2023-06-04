@@ -13,7 +13,6 @@ struct SettingView: View {
     let isEditing: Bool
     
     var body: some View {
-        NavigationStack {
             VStack {
                 DatePicker("Select a time", selection: $selectedTime, displayedComponents: .hourAndMinute)
                     .datePickerStyle(.wheel)
@@ -60,7 +59,6 @@ struct SettingView: View {
                     }
                 }
             }
-        }.tint(.yellow)
     }
 }
 
