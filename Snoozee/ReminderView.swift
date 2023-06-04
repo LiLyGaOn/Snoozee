@@ -25,7 +25,7 @@ struct ReminderView: View {
                             Spacer()
                             if selectedRow == index {
                                 Image(systemName: "checkmark")
-                                    .foregroundColor(.yellow)
+                                    .foregroundColor(Color(.systemOrange))
                                     .fontWeight(.bold)
                             }
                         }
