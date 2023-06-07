@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9772E8632A2B2B8E00CBBB15 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9772E8622A2B2B8E00CBBB15 /* SettingView.swift */; };
 		9772E8672A2B404400CBBB15 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9772E8662A2B404400CBBB15 /* ReminderView.swift */; };
+		97AE16362A2F1F13002B6CE7 /* FirstCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AE16352A2F1F13002B6CE7 /* FirstCardView.swift */; };
 		97D126BF2A27658C008FEB64 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D126BE2A27658C008FEB64 /* CardView.swift */; };
 		97D126C12A2772D5008FEB64 /* textStyleSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D126C02A2772D5008FEB64 /* textStyleSize.swift */; };
 		EE686FAD2A25F9CA001E3993 /* SnoozeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		9772E8622A2B2B8E00CBBB15 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		9772E8662A2B404400CBBB15 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		97AE16352A2F1F13002B6CE7 /* FirstCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCardView.swift; sourceTree = "<group>"; };
 		97D126BE2A27658C008FEB64 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		97D126C02A2772D5008FEB64 /* textStyleSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textStyleSize.swift; sourceTree = "<group>"; };
 		EE686FA92A25F9CA001E3993 /* Snoozee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snoozee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				9772E8622A2B2B8E00CBBB15 /* SettingView.swift */,
 				97D126BE2A27658C008FEB64 /* CardView.swift */,
 				EEB7809C2A29CC5A009684C3 /* MainView.swift */,
+				97AE16352A2F1F13002B6CE7 /* FirstCardView.swift */,
 				EE686FAE2A25F9CA001E3993 /* ContentView.swift */,
 				EE686FBB2A25FB20001E3993 /* DataModel.swift */,
 				9772E8662A2B404400CBBB15 /* ReminderView.swift */,
@@ -171,6 +174,7 @@
 				97D126C12A2772D5008FEB64 /* textStyleSize.swift in Sources */,
 				9772E8672A2B404400CBBB15 /* ReminderView.swift in Sources */,
 				9772E8632A2B2B8E00CBBB15 /* SettingView.swift in Sources */,
+				97AE16362A2F1F13002B6CE7 /* FirstCardView.swift in Sources */,
 				EE686FBC2A25FB20001E3993 /* DataModel.swift in Sources */,
 				97D126BF2A27658C008FEB64 /* CardView.swift in Sources */,
 			);
@@ -297,7 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Snoozee/Preview Content\"";
-				DEVELOPMENT_TEAM = 47N48U5HD5;
+				DEVELOPMENT_TEAM = 2YSYJFB7P9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -335,7 +339,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Snoozee/Preview Content\"";
-				DEVELOPMENT_TEAM = 47N48U5HD5;
+				DEVELOPMENT_TEAM = 2YSYJFB7P9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

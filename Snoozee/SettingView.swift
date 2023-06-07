@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SettingView: View {
     @State private var selectedTime = Date()
-    var dataModel: DataModel
-    let isEditing: Bool
+    @Binding var dataModel: DataModel
+    var isEditing: Bool
     
     var body: some View {
             VStack {
@@ -25,7 +25,7 @@ struct SettingView: View {
                             Text("요일")
                             Spacer()
                             Text("\(dataModel.returnWeekdays)")
-                                .foregroundColor(Color(red:0.459, green: 0.459, blue: 0.459))
+                                .foregroundColor(Color(.systemGray))
                         }
                     }
                     
@@ -34,7 +34,7 @@ struct SettingView: View {
                             Text("다시 알림")
                             Spacer()
                             Text("\(dataModel.reminder)분 뒤")
-                                .foregroundColor(Color(red:0.459, green: 0.459, blue: 0.459))
+                                .foregroundColor(Color(.systemGray))
                         }
                     }
                     
@@ -42,7 +42,7 @@ struct SettingView: View {
                         Text("사운드")
                         Spacer()
                         Text("\(dataModel.soundName)")
-                            .foregroundColor(Color(red:0.459, green: 0.459, blue: 0.459))
+                            .foregroundColor(Color(.systemGray))
                     }
                     
                     if isEditing{
@@ -64,7 +64,7 @@ struct SettingView: View {
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingView(dataModel: DataModel.sampleData[0], isEditing: true)
+        SettingView(dataModel: .constant(DataModel.sampleData[3]), isEditing: true)
     }
 }
 

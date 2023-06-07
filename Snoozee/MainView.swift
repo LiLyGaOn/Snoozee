@@ -10,9 +10,7 @@ import SwiftUI
 struct MainView: View {
     @State var dataModels: [DataModel]
     @State var gridColumns = Array(repeating: GridItem(.flexible()), count: 2)
-    @State var isShowingSheet: Bool = false
-    @State var parameterData: DataModel = DataModel.sampleData[0]
-    @State var parameterIsEditing: Bool = false
+    @State var selectedDataModel: DataModel? = nil
     
     var body: some View {
         NavigationView{
@@ -24,58 +22,45 @@ struct MainView: View {
                         ForEach(dataModels.indices) { index in
                             if index == 0 {
                                 Button(action: {
-                                    isShowingSheet = true
-                                    parameterData = DataModel.sampleData[0]
-                                    parameterIsEditing = false
+                                    selectedDataModel = dataModels[index]
                                 }) {
-                                    RoundedRectangle(cornerRadius: 24)
-                                        .aspectRatio(0.73, contentMode: .fit)
-                                        .foregroundColor(Color(.systemGray4))
-                                        .overlay (
-                                            Image(systemName: "plus")
-                                                .font(.largeTitle)
-                                                .foregroundColor(Color(.systemOrange))
-                                        )}} else {
-                                            
-                                            Button(action: {
-                                                isShowingSheet = true
-                                                parameterData = dataModels[index]
-                                                parameterIsEditing = true
-                                                
-                                            }){
-                                                CardView(dataModel: dataModels[index])
-                                            }
-                                        }
+                                    FirstCardView(dataModel: dataModels[index])
+                                }
+                            } else {
+                                Button(action: {
+                                    selectedDataModel = dataModels[index]
+                                }) {
+                                    CardView(dataModel: dataModels[index])
+                                }
+                            }
                         }
                     }
                 }
                 .padding(.horizontal)
                 .navigationTitle("스누즈")
-                .sheet(isPresented: $isShowingSheet) {
-                    NavigationView{
-                        SettingView(dataModel: parameterData, isEditing: parameterIsEditing)
-                            .toolbar {
-                                ToolbarItem(placement: .cancellationAction){
-                                    Button("취소"){
-                                        isShowingSheet = false
-                                    }
-                                    .foregroundColor(Color(.systemOrange))
-                                }
-                                ToolbarItem(placement: .principal) {
-                                    Text(parameterIsEditing ? "알람 편집" : "알람 추가")
-                                        .fontWeight(.bold)
-                                }
-                                
-                                
-                                ToolbarItem(placement: .confirmationAction){
-                                    Button("저장"){
-                                        isShowingSheet = false
-                                    }
-                                    .foregroundColor(Color(.systemOrange))
-                                }
+            }
+        }
+        .sheet(item: $selectedDataModel) { dataModel in
+            NavigationView {
+                SettingView(dataModel: .constant(dataModel), isEditing: true)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction){
+                            Button("취소") {
+                               selectedDataModel = nil
                             }
+                            .foregroundColor(Color(.systemOrange))
+                        }
+                        ToolbarItem(placement: .principal) {
+                            Text("알람 편집")
+                                .fontWeight(.bold)
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("저장") {
+                                selectedDataModel = nil
+                            }
+                            .foregroundColor(Color(.systemOrange))
+                        }
                     }
-                }
             }
         }
     }
