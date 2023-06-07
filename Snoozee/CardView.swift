@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct CardView: View {
-    
     @State var dataModel: DataModel
-    @State var isOn : Bool = true
-    
+    @State var isOn: Bool = true
     
     var body: some View {
-        
         RoundedRectangle(cornerRadius: 24)
             .aspectRatio(0.73, contentMode: .fit)
             .onAppear {
@@ -23,19 +20,12 @@ struct CardView: View {
             .foregroundColor(dataModel.isToggleActive ? Color(.systemGreen) : Color(.systemGray4))
             .opacity(dataModel.isToggleActive ? 0.3 : 1)
             .overlay(
-                
                 VStack {
-                    Toggle(isOn: $isOn) {
-                    }
-                    .onChange(of: isOn) { newValue in
-                                    if newValue {
-                                        dataModel.isToggleActive = true
-                                    } else {
-                                        dataModel.isToggleActive = false
-                                    }
-                                }
-                    .padding(.bottom)
-
+                    Toggle(isOn: $isOn) {}
+                        .onChange(of: isOn) { newValue in
+                            dataModel.isToggleActive = newValue
+                        }
+                        .padding(.bottom)
                     
                     HStack {
                         Text("\(String(format: "%02d", dataModel.hour)):\(String(format: "%02d", dataModel.minute))")
@@ -43,7 +33,6 @@ struct CardView: View {
                             .fixedSize()
                             .padding(.bottom)
                         Spacer()
-                        
                     }
                     
                     HStack {
@@ -57,14 +46,12 @@ struct CardView: View {
                         }
                         Spacer()
                     }
-                    
-                    //.font(.caption)
                     .font(.system(size: UIFont.textStyleSize(.caption2) * 1.2, weight: .light))
-                    Spacer()
                     
+                    Spacer()
                 }
-                    .padding()
-                    .foregroundColor(dataModel.isToggleActive ? .white : Color(red:0.459, green: 0.459, blue: 0.459))
+                .padding()
+                .foregroundColor(dataModel.isToggleActive ? .white : Color(red:0.459, green: 0.459, blue: 0.459))
             )
     }
 }
@@ -72,7 +59,6 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView(dataModel: DataModel.sampleData[1])
-            .previewLayout(.fixed(width: 169, height: 230))
     }
 }
 
