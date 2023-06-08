@@ -11,6 +11,13 @@ struct MainView: View {
     @State var dataModels: [DataModel]
     @State var gridColumns = Array(repeating: GridItem(.flexible()), count: 2)
     @State var selectedDataModel: DataModel? = nil
+    @State var isLongPressed: Bool = false
+    @State var isSelected: [Bool]
+      
+      init(dataModels: [DataModel]) {
+          self._dataModels = State(initialValue: dataModels)
+          self._isSelected = State(initialValue: Array(repeating: false, count: dataModels.count))
+      }
     
     var body: some View {
         NavigationView{
@@ -27,11 +34,35 @@ struct MainView: View {
                                     FirstCardView(dataModel: dataModels[index])
                                 }
                             } else {
-                                Button(action: {
-                                    selectedDataModel = dataModels[index]
-                                }) {
                                     CardView(dataModel: dataModels[index])
-                                }
+                                    .overlay(
+                                        Button(action: {
+                                            isLongPressed = false
+                                            // 삭제 기능
+                                        }){
+                                            Image(systemName: "minus.circle.fill")
+                                                .foregroundColor(.red)
+                                        }
+                                            .padding()
+                                            .opacity(isLongPressed ? 1 : 0)
+                                        , alignment: .topLeading
+                                    
+                                    )
+                                    .opacity(isSelected[index] ? 0.5 : 1)
+                                    .gesture(
+                                        LongPressGesture()
+                                            .onChanged{ _ in
+                                                isSelected[index] = true
+                                            }
+                                            .onEnded { _ in
+                                                isSelected[index] = false
+                                                isLongPressed = true
+                                            }
+                                            .simultaneously(with: TapGesture().onEnded { _ in
+                                                isSelected[index] = false
+                                                selectedDataModel = dataModels[index]
+                                            })
+                                    )
                             }
                         }
                     }
@@ -39,6 +70,18 @@ struct MainView: View {
                 .padding(.horizontal)
                 .navigationTitle("스누즈")
             }
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("완료") {
+                       isLongPressed = false
+                    }
+                    .foregroundColor(Color(.systemOrange))
+                    .opacity(isLongPressed ? 1 : 0)
+                }
+            }
+        }
+        .onAppear{
+            isLongPressed = false
         }
         .sheet(item: $selectedDataModel) { dataModel in
             NavigationView {
