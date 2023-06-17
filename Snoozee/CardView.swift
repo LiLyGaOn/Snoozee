@@ -27,7 +27,7 @@ struct CardView: View {
                     Toggle(isOn: isToggleActive) {
                     }.onTapGesture {
                         isToggleActive.wrappedValue.toggle()
-                    }
+                    }.tint(.green)
                     .padding(.bottom)
                     HStack {
                         Text("\(String(format: "%02d", dataModel.hour)):\(String(format: "%02d", dataModel.minute))")

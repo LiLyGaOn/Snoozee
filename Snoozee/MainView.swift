@@ -123,7 +123,7 @@ struct MainView: View {
                         }
                     }
             }
-        }
+        }.tint(.orange)
     }
 }
 
