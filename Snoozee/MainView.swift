@@ -46,7 +46,7 @@ struct MainView: View {
                                     isPlus = newValue
                                 }
                             } else {
-                                CardView(dataModel: dataModels[index])
+                                CardView(dataModel: dataModels[index], isLongPressed: $isLongPressed)
                                     .overlay(
                                         Button(action: {
                                             isLongPressed = false

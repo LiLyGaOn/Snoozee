@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     @State var dataModel: DataModel
+    @Binding var isLongPressed: Bool
     
     var body: some View {
         let isToggleActive = Binding<Bool>(
@@ -24,11 +25,19 @@ struct CardView: View {
             .opacity(dataModel.isToggleActive ? 0.3 : 1)
             .overlay(
                 VStack {
-                    Toggle(isOn: isToggleActive) {
-                    }.onTapGesture {
-                        isToggleActive.wrappedValue.toggle()
-                    }.tint(.green)
-                    .padding(.bottom)
+                    if !isLongPressed {
+                        Toggle(isOn: isToggleActive) {
+                        }.onTapGesture {
+                            isToggleActive.wrappedValue.toggle()
+                        }.tint(.green)
+                            .padding(.bottom)
+                    } else {
+                        Toggle(isOn: isToggleActive) {
+                        }
+                        .disabled(true)
+                        .padding(.bottom)
+                        .opacity(0)
+                    }
                     HStack {
                         Text("\(String(format: "%02d", dataModel.hour)):\(String(format: "%02d", dataModel.minute))")
                             .font(.system(size: UIFont.textStyleSize(.largeTitle) * 1.7, weight: .light))
@@ -61,7 +70,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(dataModel: DataModel.sampleData[1])
+        CardView(dataModel: DataModel.sampleData[1], isLongPressed: .constant(false))
     }
 }
 
