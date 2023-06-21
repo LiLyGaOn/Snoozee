@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct MainView: View {
     @State var dataModels: [DataModel]
@@ -14,6 +15,8 @@ struct MainView: View {
     @State var isLongPressed: Bool = false
     @State var isSelected: [Bool]
     @State var isPlus: Bool? = nil
+    let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+    @State var cardOffset: CGSize = .zero // 추가: 카드 위치를 조정하는 변수
     
     init(dataModels: [DataModel]) {
         self._dataModels = State(initialValue: dataModels)
@@ -69,6 +72,19 @@ struct MainView: View {
                                             .onEnded { _ in
                                                 isSelected[index] = false
                                                 isLongPressed = true
+                                                feedbackGenerator.prepare() // 햅틱 효과를 준비
+                                                feedbackGenerator.impactOccurred() // 햅틱 효과 발생
+                                                withAnimation(.easeInOut(duration: 0.2)) {
+                                                                    // 애니메이션을 적용할 코드
+                                                    isSelected[index] = false
+                                                       isLongPressed = true
+                                                       // 카드를 좌우로 이동시키는 애니메이션
+                                                       if isLongPressed {
+                                                           cardOffset = CGSize(width: 10, height: 0) // 오른쪽으로 이동
+                                                       } else {
+                                                           cardOffset = .zero // 원래 위치로 복귀
+                                                       }
+                                                                }
                                             }
                                             .simultaneously(with: TapGesture().onEnded { _ in
                                                 isSelected[index] = false
