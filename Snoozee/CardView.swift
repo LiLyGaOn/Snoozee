@@ -19,6 +19,13 @@ struct CardView: View {
             }
         )
         
+        let isToggleActive2 = Binding<Bool>(
+            get: { dataModel.isToggleActive2 },
+            set: { newValue in
+                dataModel.isToggleActive2 = newValue
+            }
+        )
+        
         RoundedRectangle(cornerRadius: 24)
             .aspectRatio(0.73, contentMode: .fit)
             .foregroundColor(dataModel.isToggleActive ? Color(.systemGreen) : Color(.systemGray4))
@@ -32,7 +39,7 @@ struct CardView: View {
                         }.tint(.green)
                             .padding(.bottom)
                     } else {
-                        Toggle(isOn: isToggleActive) {
+                        Toggle(isOn: isToggleActive2) {
                         }
                         .disabled(true)
                         .padding(.bottom)

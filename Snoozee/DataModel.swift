@@ -21,9 +21,10 @@ struct DataModel : Identifiable{
     var reminder: Int
     var soundName: String
     var isToggleActive: Bool
+    var isToggleActive2: Bool
     
     
-    init(id: UUID = UUID(), hour: Int, minute: Int, selectedWeekdays: [Weekday], reminder: Int, soundName: String, isToggleActive: Bool) {
+    init(id: UUID = UUID(), hour: Int, minute: Int, selectedWeekdays: [Weekday], reminder: Int, soundName: String, isToggleActive: Bool, isToggleActive2: Bool) {
         self.id = id
         self.hour = hour
         self.minute = minute
@@ -31,18 +32,19 @@ struct DataModel : Identifiable{
         self.reminder = reminder
         self.soundName = soundName
         self.isToggleActive = isToggleActive
+        self.isToggleActive2 = isToggleActive2
     }
 }
 
 extension DataModel {
     static let sampleData: [DataModel] =
     [
-        DataModel(hour: 00, minute: 00, selectedWeekdays: [], reminder: 1, soundName: "전파 탐지기", isToggleActive: true),
-        DataModel(hour: 07, minute: 00, selectedWeekdays: [.sat, .sun], reminder: 5, soundName: "개 짖는 소리", isToggleActive: true),
-        DataModel(hour: 08, minute: 20, selectedWeekdays: [.mon, .tue, .wed, .thu, .fri, .sat, .sun], reminder: 3, soundName: "전파 탐지기", isToggleActive: false),
-        DataModel(hour: 09, minute: 30, selectedWeekdays: [.mon, .wed, .fri], reminder: 3, soundName: "공상음", isToggleActive: true),
-        DataModel(hour: 17, minute: 45, selectedWeekdays: [], reminder: 1, soundName: "없음", isToggleActive: false),
-        DataModel(hour: 21, minute: 30, selectedWeekdays: [.mon, .tue, .wed, .thu, .fri], reminder: 3, soundName: "공상음", isToggleActive: false),
+        DataModel(hour: 00, minute: 00, selectedWeekdays: [], reminder: 1, soundName: "전파 탐지기", isToggleActive: true, isToggleActive2: false),
+        DataModel(hour: 07, minute: 00, selectedWeekdays: [.sat, .sun], reminder: 5, soundName: "개 짖는 소리", isToggleActive: true, isToggleActive2: false),
+        DataModel(hour: 08, minute: 20, selectedWeekdays: [.mon, .tue, .wed, .thu, .fri, .sat, .sun], reminder: 3, soundName: "전파 탐지기", isToggleActive: false, isToggleActive2: false),
+        DataModel(hour: 09, minute: 30, selectedWeekdays: [.mon, .wed, .fri], reminder: 3, soundName: "공상음", isToggleActive: true, isToggleActive2: false),
+        DataModel(hour: 17, minute: 45, selectedWeekdays: [], reminder: 1, soundName: "없음", isToggleActive: false, isToggleActive2: false),
+        DataModel(hour: 21, minute: 30, selectedWeekdays: [.mon, .tue, .wed, .thu, .fri], reminder: 3, soundName: "공상음", isToggleActive: false, isToggleActive2: false)
     ]
 }
 
