@@ -12,7 +12,7 @@ struct MainView: View {
     @State var dataModels: [DataModel]
     @State var gridColumns = Array(repeating: GridItem(.flexible()), count: 2)
     @State var selectedDataModel: DataModel? = nil
-    @State var isLongPressed: Bool = false
+    @State var isDeleting: Bool = false
     @State var isSelected: [Bool]
     @State var isPlus: Bool? = nil
     let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
@@ -49,10 +49,10 @@ struct MainView: View {
                                     isPlus = newValue
                                 }
                             } else {
-                                CardView(dataModel: dataModels[index], isLongPressed: $isLongPressed)
+                                CardView(dataModel: dataModels[index], isDeleting: $isDeleting)
                                     .overlay(
                                         Button(action: {
-                                            isLongPressed = false
+                                            isDeleting = false
                                             // 삭제 기능
                                         }){
                                             Image(systemName: "minus.circle.fill")
@@ -60,37 +60,14 @@ struct MainView: View {
                                                 .font(.title)
                                         }
                                             .padding(10)
-                                            .opacity(isLongPressed ? 1 : 0)
+                                            .opacity(isDeleting ? 1 : 0)
                                         , alignment: .topLeading
                                     )
                                     .opacity(isSelected[index] ? 0.5 : 1)
-                                    .gesture(
-                                        LongPressGesture()
-                                            .onChanged{ _ in
-                                                isSelected[index] = true
-                                            }
-                                            .onEnded { _ in
-                                                isSelected[index] = false
-                                                isLongPressed = true
-                                                feedbackGenerator.prepare() // 햅틱 효과를 준비
-                                                feedbackGenerator.impactOccurred() // 햅틱 효과 발생
-                                                withAnimation(.easeInOut(duration: 0.2)) {
-                                                                    // 애니메이션을 적용할 코드
-                                                    isSelected[index] = false
-                                                       isLongPressed = true
-                                                       // 카드를 좌우로 이동시키는 애니메이션
-                                                       if isLongPressed {
-                                                           cardOffset = CGSize(width: 10, height: 0) // 오른쪽으로 이동
-                                                       } else {
-                                                           cardOffset = .zero // 원래 위치로 복귀
-                                                       }
-                                                                }
-                                            }
-                                            .simultaneously(with: TapGesture().onEnded { _ in
-                                                isSelected[index] = false
-                                                selectedDataModel = dataModels[index]
-                                            })
-                                    )
+                                    .onTapGesture(){
+                                        isSelected[index] = false
+                                        selectedDataModel = dataModels[index]
+                                    }
                             }
                         }
                     }
@@ -99,12 +76,12 @@ struct MainView: View {
                 .navigationTitle("스누즈")
             }
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("완료") {
-                        isLongPressed = false
+                ToolbarItem(){
+                    Button(isDeleting ? "완료" : "편집") {
+                        isDeleting.toggle()
                     }
                     .foregroundColor(Color(.systemOrange))
-                    .opacity(isLongPressed ? 1 : 0)
+                    .opacity(dataModels.isEmpty ? 0 : 1)
                 }
             }
         }
@@ -115,7 +92,7 @@ struct MainView: View {
                         ToolbarItem(placement: .cancellationAction){
                             Button("취소") {
                                 isPlus = false
-                                isLongPressed = false
+                                isDeleting = false
                                 selectedDataModel = nil
                             }
                             .foregroundColor(Color(.systemOrange))
@@ -127,7 +104,7 @@ struct MainView: View {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("저장") {
                                 isPlus = false
-                                isLongPressed = false
+                                isDeleting = false
                                 selectedDataModel = nil
                             }
                             .foregroundColor(Color(.systemOrange))
@@ -135,7 +112,7 @@ struct MainView: View {
                     }
                     .onAppear {
                         if selectedDataModel != nil {
-                            isLongPressed = false
+                            isDeleting = false
                         }
                     }
             }

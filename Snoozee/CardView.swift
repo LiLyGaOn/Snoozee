@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     @State var dataModel: DataModel
-    @Binding var isLongPressed: Bool
+    @Binding var isDeleting: Bool
     
     var body: some View {
         let isToggleActive = Binding<Bool>(
@@ -32,7 +32,7 @@ struct CardView: View {
             .opacity(dataModel.isToggleActive ? 0.3 : 1)
             .overlay(
                 VStack {
-                    if !isLongPressed {
+                    if !isDeleting {
                         Toggle(isOn: isToggleActive) {
                         }.onTapGesture {
                             isToggleActive.wrappedValue.toggle()
@@ -77,7 +77,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(dataModel: DataModel.sampleData[1], isLongPressed: .constant(false))
+        CardView(dataModel: DataModel.sampleData[1], isDeleting: .constant(false))
     }
 }
 
