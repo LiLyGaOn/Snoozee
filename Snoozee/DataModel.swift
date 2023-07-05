@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct DataModel : Identifiable{
+struct DataModel : Identifiable, Codable{
     
     var id: UUID
     var hour: Int
