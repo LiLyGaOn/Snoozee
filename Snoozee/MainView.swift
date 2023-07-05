@@ -9,7 +9,8 @@ import SwiftUI
 import UIKit
 
 struct MainView: View {
-    @State var dataModels: [DataModel]
+    @Binding var dataModels: [DataModel]
+    @Environment(\.scenePhase) private var scenePhase
     @State var gridColumns = Array(repeating: GridItem(.flexible()), count: 2)
     @State var selectedDataModel: DataModel? = nil
     @State var isLongPressed: Bool = false
@@ -17,6 +18,7 @@ struct MainView: View {
     @State var isPlus: Bool? = nil
     let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
     @State var cardOffset: CGSize = .zero // 추가: 카드 위치를 조정하는 변수
+    let saveAction: ()->Void
     
     init(dataModels: [DataModel]) {
         self._dataModels = State(initialValue: dataModels)
@@ -75,16 +77,16 @@ struct MainView: View {
                                                 feedbackGenerator.prepare() // 햅틱 효과를 준비
                                                 feedbackGenerator.impactOccurred() // 햅틱 효과 발생
                                                 withAnimation(.easeInOut(duration: 0.2)) {
-                                                                    // 애니메이션을 적용할 코드
+                                                    // 애니메이션을 적용할 코드
                                                     isSelected[index] = false
-                                                       isLongPressed = true
-                                                       // 카드를 좌우로 이동시키는 애니메이션
-                                                       if isLongPressed {
-                                                           cardOffset = CGSize(width: 10, height: 0) // 오른쪽으로 이동
-                                                       } else {
-                                                           cardOffset = .zero // 원래 위치로 복귀
-                                                       }
-                                                                }
+                                                    isLongPressed = true
+                                                    // 카드를 좌우로 이동시키는 애니메이션
+                                                    if isLongPressed {
+                                                        cardOffset = CGSize(width: 10, height: 0) // 오른쪽으로 이동
+                                                    } else {
+                                                        cardOffset = .zero // 원래 위치로 복귀
+                                                    }
+                                                }
                                             }
                                             .simultaneously(with: TapGesture().onEnded { _ in
                                                 isSelected[index] = false
@@ -139,12 +141,16 @@ struct MainView: View {
                         }
                     }
             }
-        }.tint(.orange)
+        }
+        .tint(.orange)
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(dataModels: DataModel.sampleData)
+        MainView(dataModels: DataModel.sampleData, saveAction: {})
     }
 }

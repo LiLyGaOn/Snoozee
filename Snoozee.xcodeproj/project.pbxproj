@@ -11,6 +11,7 @@
 		9772E8672A2B404400CBBB15 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9772E8662A2B404400CBBB15 /* ReminderView.swift */; };
 		97D126BF2A27658C008FEB64 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D126BE2A27658C008FEB64 /* CardView.swift */; };
 		97D126C12A2772D5008FEB64 /* textStyleSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D126C02A2772D5008FEB64 /* textStyleSize.swift */; };
+		97DBC9912A5636700081F006 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBC9902A5636700081F006 /* DataStore.swift */; };
 		EE686FAD2A25F9CA001E3993 /* SnoozeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */; };
 		EE686FAF2A25F9CA001E3993 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE686FAE2A25F9CA001E3993 /* ContentView.swift */; };
 		EE686FB12A25F9CB001E3993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE686FB02A25F9CB001E3993 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		9772E8662A2B404400CBBB15 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		97D126BE2A27658C008FEB64 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		97D126C02A2772D5008FEB64 /* textStyleSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textStyleSize.swift; sourceTree = "<group>"; };
+		97DBC9902A5636700081F006 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		EE686FA92A25F9CA001E3993 /* Snoozee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snoozee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnoozeeApp.swift; sourceTree = "<group>"; };
 		EE686FAE2A25F9CA001E3993 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				EE686FAC2A25F9CA001E3993 /* SnoozeeApp.swift */,
 				EE686FBB2A25FB20001E3993 /* DataModel.swift */,
+				97DBC9902A5636700081F006 /* DataStore.swift */,
 				97D126C02A2772D5008FEB64 /* textStyleSize.swift */,
 				EE686FBD2A25FB2D001E3993 /* Weekday.swift */,
 				EEB7809C2A29CC5A009684C3 /* MainView.swift */,
@@ -167,6 +170,7 @@
 				EEB7809D2A29CC5A009684C3 /* MainView.swift in Sources */,
 				EE686FAD2A25F9CA001E3993 /* SnoozeeApp.swift in Sources */,
 				EE686FBE2A25FB2D001E3993 /* Weekday.swift in Sources */,
+				97DBC9912A5636700081F006 /* DataStore.swift in Sources */,
 				EED360FD2A2B4051008E03E0 /* WeekDayView.swift in Sources */,
 				97D126C12A2772D5008FEB64 /* textStyleSize.swift in Sources */,
 				9772E8672A2B404400CBBB15 /* ReminderView.swift in Sources */,
