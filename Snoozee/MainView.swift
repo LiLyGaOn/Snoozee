@@ -13,14 +13,12 @@ struct MainView: View {
     @State var gridColumns = Array(repeating: GridItem(.flexible()), count: 2)
     @State var selectedDataModel: DataModel? = nil
     @State var isDeleting: Bool = false
-    @State var isSelected: [Bool]
     @State var isPlus: Bool? = nil
     let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
     @State var cardOffset: CGSize = .zero // 추가: 카드 위치를 조정하는 변수
     
     init(dataModels: [DataModel]) {
         self._dataModels = State(initialValue: dataModels)
-        self._isSelected = State(initialValue: Array(repeating: false, count: dataModels.count))
     }
     
     var body: some View {
@@ -49,6 +47,9 @@ struct MainView: View {
                                     isPlus = newValue
                                 }
                             } else {
+                                Button(action: {
+                                    selectedDataModel = dataModels[index]
+                                }) {
                                 CardView(dataModel: dataModels[index], isDeleting: $isDeleting)
                                     .overlay(
                                         Button(action: {
@@ -63,12 +64,8 @@ struct MainView: View {
                                             .opacity(isDeleting ? 1 : 0)
                                         , alignment: .topLeading
                                     )
-                                    .opacity(isSelected[index] ? 0.5 : 1)
-                                    .onTapGesture(){
-                                        isSelected[index] = false
-                                        selectedDataModel = dataModels[index]
-                                    }
                             }
+                        }
                         }
                     }
                 }
